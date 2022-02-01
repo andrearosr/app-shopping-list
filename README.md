@@ -23,6 +23,5 @@ En la terminal, cambia a la carpeta creada e instala los módulos. Cuando termin
 ```
 $ cd app-todo
 $ npm install
-$ expo start```
-
-
+$ expo start
+```
