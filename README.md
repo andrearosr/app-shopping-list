@@ -1,4 +1,4 @@
-# app-todo
+# app-shopping-list
 
 ## Coderhouse - Desarrollo de Aplicaciones
 
