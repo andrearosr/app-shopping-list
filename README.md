@@ -4,9 +4,7 @@
 
 Clase 3 (Core Components)
 
-Clase 4 (Eventos & Lista Optimizada)
-
-Clase 5 (Debug & Split components)
+Agregamos core components para crear un layout con estilos básicos.
 
 ## Versiones
 
