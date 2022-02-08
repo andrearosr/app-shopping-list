@@ -2,13 +2,11 @@
 
 ## Coderhouse - Desarrollo de Aplicaciones
 
+Clase 3 (Core Components)
+
 Clase 4 (Eventos & Lista Optimizada)
 
-Agregamos eventos y capturamos datos en el estado del componente a través de hooks
-
-Exploramos el componente FlatList para renderizar listas de manera optimizada
-
-Integramos eventos en los componentes de lista
+Clase 5 (Debug & Split Components)
 
 ## Versiones
 
