@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, Button, View, FlatList, Modal } from 'react-native';
+import { StyleSheet, Text, Button, View, FlatList, Modal } from 'react-native';
+import AddItem from './components/AddItem/AddItem';
 
 export default function App() {
   const [textInput, setTextInput] = useState('')
@@ -38,17 +39,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          value={textInput}
-          onChangeText={handleChangeText}
-        />
-        <Button
-          onPress={handleOnPress}
-          title="Add"
-        />
-      </View>
+      <AddItem
+        textInput={textInput}
+        handleOnPress={handleOnPress}
+        handleChangeText={handleChangeText}
+      />
 
       <FlatList
         data={itemList}
@@ -85,15 +80,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     padding: 30,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-  },
-  input: {
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    flex: 1,
-    marginRight: 20,
   },
   item: {
     padding: 20,
