@@ -2,13 +2,9 @@
 
 ## Coderhouse - Desarrollo de Aplicaciones
 
-Clase 4 (Eventos & Lista Optimizada)
+Clase 5 (Debug & Split Components)
 
-Agregamos eventos y capturamos datos en el estado del componente a través de hooks
-
-Exploramos el componente FlatList para renderizar listas de manera optimizada
-
-Integramos eventos en los componentes de lista
+Identificamos unidades funcionales y aplicamos el refactor Split Components
 
 ## Versiones
 
