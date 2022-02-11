@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Button, View, FlatList, Modal } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import AddItem from './components/AddItem/AddItem';
+import Modal from './components/Modal/Modal';
+import List from './components/List';
 
 export default function App() {
   const [textInput, setTextInput] = useState('')
@@ -25,7 +27,7 @@ export default function App() {
     ])
   }
 
-  const handleOnDelete = (item) => () => {
+  const handleOnDelete = (item) => {
     setModalVisible(true)
     setItemSelected(item)
   }
@@ -45,32 +47,16 @@ export default function App() {
         handleChangeText={handleChangeText}
       />
 
-      <FlatList
-        data={itemList}
-        renderItem={({ item }) => (
-            <View style={styles.item}>
-              <Text>{item.value}</Text>
-              <Button onPress={handleOnDelete(item)} title="X" />
-            </View>
-          )
-        }
-        keyExtractor={item => item.id}
+      <List
+        itemList={itemList}
+        handleOnDelete={handleOnDelete}
       />
 
-      <Modal animationType='slide' visible={modalVisible}>
-        <View>
-          <View>
-            <Text>¿Está seguro que desea eliminar?</Text>
-            <Text>{itemSelected.value}</Text>
-          </View>
-          <View>
-            <Button
-              onPress={handleConfirmDelete}
-              title="CONFIRMAR"
-            />
-          </View>
-        </View>
-      </Modal>
+      <Modal
+        modalVisible={modalVisible}
+        itemSelected={itemSelected}
+        handleConfirmDelete={handleConfirmDelete}
+      />
 
       <StatusBar style="auto" />
     </View>
@@ -81,13 +67,4 @@ const styles = StyleSheet.create({
   container: {
     padding: 30,
   },
-  item: {
-    padding: 20,
-    marginVertical: 20,
-    borderColor: 'black',
-    borderWidth: 1, 
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  }
 });
